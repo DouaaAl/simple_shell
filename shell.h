@@ -1,6 +1,8 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+extern char **environ;
+
 /*
  * shell functions
  */
@@ -12,6 +14,8 @@ int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 char **splitter(char *line);
+void freearr(char **arr);
+int _excute(char **command, char **argv);
 
 /*
  * shell libraries
