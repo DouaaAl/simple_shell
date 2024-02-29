@@ -10,8 +10,9 @@
 int main(int ac, char **argv)
 {
 	char *line = NULL, **command = NULL;
-	int status = 0, idx = 0;
+	int status = 0, i;
 	(void) ac;
+	(void) argv;
 
 	while (1)
 	{
@@ -19,17 +20,23 @@ int main(int ac, char **argv)
 
 		if (line == NULL)
 		{
-			if (isatty(STDIN_FILENO))
+			if(isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
-		idx++;
 
 		command = splitter(line);
 
 		if (!command)
+		{
+			printf("command is null");
 			continue;
-
-		status = _excute(command, argv, idx);
+		}
+		for (i = 0 ; command[i] ; i++)
+		{
+			printf("%s\n", command[i]);
+			free(command[i]), command[i] = NULL;
+		}
+		free(command), command = NULL;
 	}
 }
