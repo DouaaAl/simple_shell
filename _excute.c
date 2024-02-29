@@ -13,7 +13,7 @@ int _excute(char **command, char **argv)
 		{
 			perror(argv[0]);
 			freearr(command);
-			exit(99);
+			exit(100);
 		}
 	}
 	else

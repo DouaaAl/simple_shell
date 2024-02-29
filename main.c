@@ -30,6 +30,5 @@ int main(int ac, char **argv)
 			continue;
 
 		status = _excute(command, argv);
-		printf("%d\n", status);
 	}
 }
