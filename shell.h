@@ -15,7 +15,12 @@ char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 char **splitter(char *line);
 void freearr(char **arr);
-int _excute(char **command, char **argv);
+int _excute(char **command, char **argv, int idx);
+void printerr(char *name, char *cmd, int idx);
+void *_itoa(int n);
+void reverse_string(char *str, int len);
+char *_path(char *command);
+char *_getenv(char *var);
 
 /*
  * shell libraries
@@ -30,5 +35,6 @@ int _excute(char **command, char **argv);
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <stddef.h>
 
 #endif

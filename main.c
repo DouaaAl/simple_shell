@@ -10,7 +10,7 @@
 int main(int ac, char **argv)
 {
 	char *line = NULL, **command = NULL;
-	int status = 0;
+	int status = 0, idx = 0;
 	(void) ac;
 
 	while (1)
@@ -23,12 +23,13 @@ int main(int ac, char **argv)
 				write(STDOUT_FILENO, "\n", 1);
 			return (status);
 		}
+		idx++;
 
 		command = splitter(line);
 
 		if (!command)
 			continue;
 
-		status = _excute(command, argv);
+		status = _excute(command, argv, idx);
 	}
 }
