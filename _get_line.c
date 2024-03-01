@@ -21,6 +21,5 @@ char *_get_line(void)
 		free(line);
 		return (NULL);
 	}
-	printf("%s\n", line);
 	return (line);
 }
