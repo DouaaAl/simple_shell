@@ -29,6 +29,5 @@ int main(int ac, char **argv)
 		if (!command)
 			continue;
 		status = _excute(command, argv);
-		printf("%d\n", status);
 	}
 }
